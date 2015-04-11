@@ -36,12 +36,23 @@ FAQ
     > You can pass some arguments into the connection string, for example, a URI.
     > See: https://github.com/mattn/go-sqlite3/issues/39
 
+* Do you want cross compiling? mingw on Linux or Mac?
+
+    > See: https://github.com/mattn/go-sqlite3/issues/106
+    > See also: http://www.limitlessfx.com/cross-compile-golang-app-for-windows-from-linux.html
+
+* Want to get time.Time with current locale
+
+    Use `loc=auto` in SQLite3 filename schema like `file:foo.db?loc=auto`.
+
 License
 -------
 
 MIT: http://mattn.mit-license.org/2012
 
-sqlite.c, sqlite3.h, sqlite3ext.h
+sqlite3-binding.c, sqlite3-binding.h, sqlite3ext.h
+
+The -binding suffix was added to avoid build failures under gccgo.
 
 In this repository, those files are amalgamation code that copied from SQLite3. The license of those codes are depend on the license of SQLite3.
 
